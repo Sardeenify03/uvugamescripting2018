@@ -1,36 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class CharacterMove : MonoBehaviour {
+
+	// Player Movement Vars
 	public int MoveSpeed;
 	public float JumpHeight;
 
 	//Player grounded vars
-	public transform groundCheck;
+	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 	private bool grounded;
 
-	// Use this for initialization
+	// init
 	void Start () {
-		print("alsdkfasdlkfj");
-			
-		
-	}
-
-	void Fixedupdate () {
-		grounded = physics2D.overlapcircle(groundCheck,position,groundCheckRadius,whatIsGround);
+	
 	}
 	
-	// Update is called once per frame
+
+	void FixedUpdate () {
+		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+	}
+
+	// step
 	void Update () {
-		
+
 		//jump
-		if(input.GetKeyDown (KeyCode.Space)&& grounded){
+		if(Input.GetKeyDown (KeyCode.Space)&& grounded){
 			Jump();
 		}
-		// move
+
+		// A&D move
 		if(Input.GetKey (KeyCode.D)){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			
@@ -45,14 +46,4 @@ public class CharacterMove : MonoBehaviour {
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 	}
-}
-	}
-
-	public void Jump(){
-		getComponent<RigidBody2D>().velocity = new Vector2(getComponent<RigidBody2D>().velocity.x, JumpHeight);
-	}
-
-	//move
-pu
-	
 }
