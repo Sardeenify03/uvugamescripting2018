@@ -5244,6 +5244,7 @@ GameObject:
   - component: {fileID: 1485456102}
   - component: {fileID: 1485456106}
   - component: {fileID: 1485456107}
+  - component: {fileID: 1485456108}
   m_Layer: 0
   m_Name: ANIMATION CUBE
   m_TagString: Untagged
@@ -5351,6 +5352,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1485456108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485456101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860126c6f602e344b8aba7374ed21689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  JumpHeight: 0
+  groundCheck: {fileID: 0}
+  groundCheckRadius: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1856877746
 GameObject:
   m_ObjectHideFlags: 0
