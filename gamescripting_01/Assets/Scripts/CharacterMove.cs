@@ -3,17 +3,17 @@ using System.Collections;
 
 public class CharacterMove : MonoBehaviour {
 
-	// Player Movement Vars
+	// Player Movement Variables
 	public int MoveSpeed;
 	public float JumpHeight;
 
-	//Player grounded vars
+	//Player grounded variables
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 	private bool grounded;
 
-	// init
+	// Use this for initialization
 	void Start () {
 	
 	}
@@ -23,15 +23,15 @@ public class CharacterMove : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 	}
 
-	// step
+	// Update is called once per frame
 	void Update () {
 
-		//jump
+		// jump
 		if(Input.GetKeyDown (KeyCode.Space)&& grounded){
 			Jump();
 		}
 
-		// A&D move
+		// move
 		if(Input.GetKey (KeyCode.D)){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			
